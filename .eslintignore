@@ -1,6 +1,6 @@
-*.js.flow
 flow-typed
 node_modules
-schema/schema.json
-test
+schema
+
+*.js.flow
 webpack-stats.json

@@ -3,7 +3,8 @@ var path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: [path.resolve(__dirname, 'js', 'app.js')],
+  devtool: '#source-map',
+  entry: ['whatwg-fetch', path.resolve(__dirname, 'js', 'app.js')],
   module: {
     rules: [
       {
@@ -17,7 +18,8 @@ module.exports = {
   },
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'bin'),
+    sourceMapFilename: 'app.bundle.js.map',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
