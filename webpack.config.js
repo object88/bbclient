@@ -1,31 +1,41 @@
 var path = require('path');
 
-const WebpackFileList = require('webpack-file-list-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
+const WebpackFileList = require('webpack-file-list-plugin');
 
 module.exports = {
   devtool: '#source-map',
   entry: {
-    app: path.resolve(__dirname, 'js', 'app.js'),
+    app: path.resolve(__dirname, 'src', 'app.js'),
     vendor: ['whatwg-fetch'],
   },
   module: {
     rules: [
       {
         exclude: /node_modules/,
+        test: /\.js$/,
         use: [{
           loader: 'babel-loader',
         }],
-        test: /\.js$/,
       },
-    ],
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader'], // compiles Sass to CSS
+          // options: {
+          //   sourceMap: true,
+          // },
+        }),
+    }],
   },
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'bin'),
-    sourceMapFilename: '[name].[chunkhash].js.map',
+    sourceMapFilename: '[file].map',
   },
   plugins: [
+    new ExtractTextPlugin("[name].[contenthash].css"),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: true,
@@ -35,7 +45,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module) {
-         return module.context && module.context.indexOf('node_modules') !== -1;
+       return module.context && module.context.indexOf('node_modules') !== -1;
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({

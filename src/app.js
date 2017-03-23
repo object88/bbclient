@@ -19,6 +19,8 @@ import AppContainer from './containers/AppContainer';
 import PhotoListContainer from './containers/PhotoListContainer';
 import ViewerQueries from './queries/ViewerQueries';
 
+import "./app.scss";
+
 Relay.injectNetworkLayer(
   new RelayNetworkLayer([
     urlMiddleware({
