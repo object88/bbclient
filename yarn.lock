@@ -3730,9 +3730,9 @@ webpack-dev-middleware@^1.10.1:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-file-list-plugin@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/webpack-file-list-plugin/-/webpack-file-list-plugin-0.0.3.tgz#789d9524091db74bd58bcb8e40106e1ad4b559ae"
+webpack-file-list-plugin@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/webpack-file-list-plugin/-/webpack-file-list-plugin-0.0.4.tgz#f05707e3cf42e0af7ad12fda8808f5e5b257a441"
 
 webpack-hot-middleware@^2.17.1:
   version "2.17.1"

@@ -53,6 +53,7 @@ module.exports = {
       filename: 'manifest.json',
       includeMap: true,
       path: path.resolve(__dirname, 'bin'),
+      priorities: ['manifest', 'vendor', 'app'],
     }),
     new HtmlWebpackPlugin({
       template: 'resources/index.hbs',
