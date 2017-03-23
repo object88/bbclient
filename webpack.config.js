@@ -1,7 +1,6 @@
 var path = require('path');
 
 const WebpackFileList = require('webpack-file-list-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -11,12 +10,6 @@ module.exports = {
     vendor: ['whatwg-fetch'],
   },
   module: {
-    loaders: [
-      {
-        test: /\.hbs$/,
-        loader: 'handlebars-loader',
-      },
-    ],
     rules: [
       {
         exclude: /node_modules/,
@@ -54,9 +47,6 @@ module.exports = {
       includeMap: true,
       path: path.resolve(__dirname, 'bin'),
       priorities: ['manifest', 'vendor', 'app'],
-    }),
-    new HtmlWebpackPlugin({
-      template: 'resources/index.hbs',
     }),
   ],
 }
