@@ -22,10 +22,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader'], // compiles Sass to CSS
-          // options: {
-          //   sourceMap: true,
-          // },
+          use: ['css-loader', 'sass-loader'],
         }),
     }],
   },

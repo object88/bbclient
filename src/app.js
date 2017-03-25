@@ -27,7 +27,6 @@ Relay.injectNetworkLayer(
       url: (req) => 'https://localhost:8081/graphql',
     }),
     next => req => {
-      console.log("FOOOO");
       req.credentials = 'same-origin'; // provide CORS policy to XHR request in fetch method
       // req.headers['X-Request-ID'] = uuid.v4();
       req.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS';
