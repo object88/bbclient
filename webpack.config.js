@@ -1,6 +1,6 @@
 var path = require('path');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const WebpackFileList = require('webpack-file-list-plugin');
 

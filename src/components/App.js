@@ -25,6 +25,8 @@ export default class App extends React.Component {
         <section className="photoapp">
           <AppHeaderContainer viewer={viewer}/>
 
+          <div>HELLO</div>
+
           {children}
 
         </section>
