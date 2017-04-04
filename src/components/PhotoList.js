@@ -68,17 +68,19 @@ export default class PhotoList extends React.Component {
       parent,
     };
 
+    console.log(`Invoked _cellRenderer with datum '${JSON.stringify(datum)}'`);
+
     return (
       <CellMeasurer { ...cellRendererProps }>
         <div style={style}>
           <img
-            src={datum.source}
+            src={datum.node.url}
             style={{
               height: datum.imageHeight,
               width: datum.imageWidth,
             }}
           />
-          <h4>{datum.caption}</h4>
+          <h4>{datum.node.id}</h4>
         </div>
       </CellMeasurer>
     )

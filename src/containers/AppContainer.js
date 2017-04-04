@@ -6,6 +6,6 @@ import AppHeaderContainer from './AppHeaderContainer';
 
 export default Relay.createContainer(App, {
   fragments: {
-    viewer: () => Relay.QL`fragment on User { ${AppHeaderContainer.getFragment('viewer')} photos(first: 10) {edges {node {id}}}}`,
+    viewer: () => Relay.QL`fragment on User { ${AppHeaderContainer.getFragment('viewer')} photos(first: 10) {edges {node {id, url}}}}`,
   },
 });
