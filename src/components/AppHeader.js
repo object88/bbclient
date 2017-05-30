@@ -12,6 +12,7 @@ const displayName = "AppHeader";
 export default class AppHeader extends React.Component {
   static displayName = displayName;
 
+  // prop types
   props: Props;
 
   render() {
